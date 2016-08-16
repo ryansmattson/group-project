@@ -1,10 +1,15 @@
 var express = require('express');
+var passport = require('passport');
+var bodyParser = require('body-parser');
+var session = require('express-session');
+var LocalStrategy = require('passport-local');
 var app = express();
 
 
-
-
-
+//parse request
+app.use(bodyParser.json());
+//serve static files
+app.use(express.static('public'));
 
 var server = app.listen(3000, function(){
   var port = server.address().port;
